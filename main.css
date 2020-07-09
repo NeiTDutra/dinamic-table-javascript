@@ -1,0 +1,92 @@
+body {
+  padding: 0 2%;
+  background-color: grey;
+}
+#container {
+  width: 95%;
+  border: 1px solid grey;
+  padding: 0 2%;
+  background: white;
+}
+h1, h2, h3 {
+  color: grey;
+}
+input {
+  overflow: hidden;
+  border: none;
+  width: 100%;
+}
+#header {
+  width: 100%;
+}
+#tbl_orc, #tbl_mtl, #tbl_cli, #ttl_orc {
+  width: 100%;
+}
+#ttl_orc td, #tbl_orc td, #tbl_mtl td {
+  border-left: 1px solid grey;
+  border-bottom: 1px solid grey;
+}
+th {
+  text-align: left;
+}
+#header td {
+  padding-left: 5%;
+  padding-right: 5%;
+  border: 1px solid grey;
+  margin: 0 auto;
+}
+textarea {
+  font-size: 1rem;
+  text-indent: 3rem;
+  resize: none;
+  overflow: hidden;
+  width: 100%;
+}
+@media print {
+  button {
+    display: none;
+  }
+}
+.load_top {
+  margin-top: 1%;
+}
+.fixed {
+  transition: 3s linear;
+  position: fixed;
+  margin-top: 0 !important;
+  z-index: 100;
+}
+.nav {
+  background-image: url("https://image.shutterstock.com/image-vector/collection-cobweb-isolated-on-black-600w-714848071.jpg");
+}
+.navbar, .nav-item {
+  margin-left: 2%;
+}
+.navbar {
+  padding-right: 4%;
+}
+.article {
+  margin-top: 2%;
+  padding: 1%;
+}
+html {
+  font-size: 1rem;
+}
+
+@include media-breakpoint-up(sm) {
+  html {
+    font-size: 1.2rem;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  html {
+    font-size: 1.4rem;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  html {
+    font-size: 1.6rem;
+  }
+}

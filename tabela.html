@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<!-- project forked from https://gist.github.com/macsousa -->
+<!-- forked for https://github.com/NeiTDutra -->
+<html lang="pt-br">
+    <head>
+        <title>Orçamentos NServiços</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="main.css"/>
+        <script type="text/javascript" src="tbl_script.js"></script>       
+    </head>
+    <body onload="adicionaLinha('tbl_orc'), adicionaLinha('tbl_mtl'), pegarDataAtual(), zera()">
+        <div id="container">
+            <h1>Orçamento</h1>
+            <table id="header">
+                <tr>
+                <td>
+                <p>
+                    Nei – eletricista instalador
+                    <br>
+                    Fone/Whatsapp 51 99253-7360
+                    <br>
+                    cnpj 22.552.033/0001-87
+                </p>
+                </td>
+                <td>
+                <form onsubmit="return false">
+                    <table id="tbl_cli">
+                        <tr>
+                        <td>Nome:</td>
+                        <td>
+                        <input type="text" name="nome_cliente" placeholder="Nome Do Cliente" autofocus>
+                        </td>
+                        </tr>
+                        <tr>
+                        <td>Fone/Whatsapp:</td>
+                        <td>
+                        <input type="text" name="fone_cliente" placeholder="51 99253-7360">
+                        </td>
+                        </tr>
+                        <tr>
+                        <td>End.:</td>
+                        <td>
+                        <input type="text" name="endereco_cliente" placeholder="Rua do Cliente, 0000 - Cidade">
+                        </td>
+                        </tr>
+                    </table>    
+                
+            </table>
+                <p id="p_data"></p>
+                <h2>Serviço</h2>
+                <p id="test"></p>
+            <table id="tbl_orc">
+                <tr>
+                  <th>Quant.</th>
+                  <th>Descrição</th>
+                  <th>V. unit</th>
+                  <th>V. total</th>
+                  <th></th>
+                </tr>
+            </table>
+                <button onclick="adicionaLinha('tbl_orc')">Adicionar Serviço</button>
+                <h2>Material</h2>
+            <table id="tbl_mtl">
+                <tr>
+                  <th>Quant.</th>
+                  <th>Descrição</th>
+                  <th>V. unit</th>
+                  <th>V. total</th>
+                  <th></th>
+                </tr>
+            </table>
+                <button onclick="adicionaLinha('tbl_mtl')">Adicionar Material</button>
+                <h3>Valores</h3>
+            <table id="ttl_orc">
+                <tr>
+                    <th>Descrição:</th>
+                    <th>Valor Total Serviços</th>
+                    <th>Valor Total Materiais</th>
+                    <th>Valor Total Orçamento</th>
+                </tr>
+                <tr>
+                    <th><input type="text" name="valores" value="Valores: " readonly="true"></th>
+                    <td><input type="text" id="ttl_srv" name="ttl_srv" placeholder="0.000,00" size="8" readonly="true"></td>
+                    <td><input type="text" id="ttl_mtl" name="ttl_mtl" placeholder="0.000,00" size="8" readonly="true"></td>
+                    <td><input type="text" id="tl_orc" name="ttl_orc" placeholder="0.000,00" size="8" readonly="true"></td>
+                </tr>
+            </table>
+                <h2>Obs.:</h2>
+                <textarea name="obs" placeholder="Descreva observações" rows="5" cols="100%" wrap="hard"></textarea>
+                <br>
+                <br>
+                <button onclick="">Salvar</button>
+                <button onclick="">Cancelar</button>
+                <button onclick="printDiv()">Imprimir</button>
+                <button onclick="window.location.replace('htmlpadraocompleto.html')">Sair</button>
+            </form>
+            <br>
+            <br>
+        </div>
+        <br>
+        <footer>
+	    <p>Copyright 2020 - <a href="http://sites.google.com/view/nservicos">NServiços©</a></p>
+        </footer>       
+    </body>
+</html>
+

@@ -29,6 +29,8 @@
                 celula4.innerHTML = '<input type="text" id="'+vt+'" class="'+sttl+'" name="valorTotal" size="8" placeholder="0.000,00"readonly="true" onfocus="k(this)">'; 
                 celula5.innerHTML =  '<button onclick="removeLinha(this,'+idTabela+')">X</button>';
             }
+            
+// função que formata moeda BRL para valor unitário
               
             function k(i) {
 

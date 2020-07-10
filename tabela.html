@@ -8,7 +8,7 @@
         <link rel="stylesheet" type="text/css" href="main.css"/>
         <script type="text/javascript" src="tbl_script.js"></script>       
     </head>
-    <body onload="adicionaLinha('tbl_orc'), adicionaLinha('tbl_mtl'), pegarDataAtual(), zera()">
+    <body onload="adicionaLinha('tbl_orc'), adicionaLinha('tbl_mtl'), pegarDataAtual(), reset()">
         <div id="container">
             <h1>Orçamento</h1>
             <table id="header">
@@ -34,7 +34,7 @@
                         <tr>
                         <td>Fone/Whatsapp:</td>
                         <td>
-                        <input type="text" name="fone_cliente" placeholder="00 00000 0000">
+                        <input type="text" name="fone_cliente" onkeyup="mascara(this, '## ##### ####')" maxlength="13" placeholder="00 00000 0000">
                         </td>
                         </tr>
                         <tr>
@@ -90,7 +90,7 @@
                 <br>
                 <br>
                 <button onclick="">Salvar</button>
-                <button onclick="">Cancelar</button>
+                <button onclick="reset()">Cancelar</button>
                 <button onclick="printDiv()">Imprimir</button>
                 <button onclick="window.location.replace('htmlpadraocompleto.html')">Sair</button>
             </form>

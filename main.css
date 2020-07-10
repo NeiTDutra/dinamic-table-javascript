@@ -28,6 +28,7 @@ input {
 }
 th {
   text-align: left;
+  border-left: 4px solid grey;
 }
 #header td {
   padding-left: 5%;
@@ -41,11 +42,6 @@ textarea {
   resize: none;
   overflow: hidden;
   width: 100%;
-}
-@media print {
-  button {
-    display: none;
-  }
 }
 .load_top {
   margin-top: 1%;
@@ -73,20 +69,11 @@ html {
   font-size: 1rem;
 }
 
-@include media-breakpoint-up(sm) {
-  html {
-    font-size: 1.2rem;
+@media print {
+  button {
+    display: none;
   }
-}
-
-@include media-breakpoint-up(md) {
-  html {
-    font-size: 1.4rem;
-  }
-}
-
-@include media-breakpoint-up(lg) {
-  html {
-    font-size: 1.6rem;
-  }
+  h1 {
+    color: grey;
+  }  
 }

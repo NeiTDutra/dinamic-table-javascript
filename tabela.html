@@ -5,8 +5,9 @@
     <head>
         <title>Orçamentos NServiços</title>
         <meta charset="UTF-8">
-        <link rel="stylesheet" type="text/css" href="main.css"/>
-        <script type="text/javascript" src="tbl_script.js"></script>       
+        <link rel="stylesheet" type="text/css" href="http://localhost/html_padrao/main.css"/>
+        <script type="text/javascript" src="http://localhost/html_padrao/database.js"></script>   
+        <script type="text/javascript" src="http://localhost/html_padrao/tbl_script.js"></script>    
     </head>
     <body onload="adicionaLinha('tbl_orc'), adicionaLinha('tbl_mtl'), pegarDataAtual(), reset()">
         <div id="container">
@@ -28,19 +29,19 @@
                         <tr>
                         <td>Nome:</td>
                         <td>
-                        <input type="text" name="nome_cliente" placeholder="Nome Do Cliente" autofocus>
+                        <input type="text" id="nome_cliente" name="nome_cliente" placeholder="Nome Do Cliente" autofocus>
                         </td>
                         </tr>
                         <tr>
                         <td>Fone/Whatsapp:</td>
                         <td>
-                        <input type="text" name="fone_cliente" onkeyup="mascara(this, '## ##### ####')" maxlength="13" placeholder="00 00000 0000">
+                        <input type="text" id="fone_cliente" name="fone_cliente" onkeyup="mascara(this, '## ##### ####')" maxlength="13" placeholder="00 00000 0000">
                         </td>
                         </tr>
                         <tr>
                         <td>End.:</td>
                         <td>
-                        <input type="text" name="endereco_cliente" placeholder="Rua do Cliente, 0000 - Cidade">
+                        <input type="text" id="endereco_cliente" name="endereco_cliente" placeholder="Rua do Cliente, 0000 - Cidade">
                         </td>
                         </tr>
                     </table>    
@@ -86,11 +87,14 @@
                 </tr>
             </table>
                 <h2>Obs.:</h2>
+                <div id="dv"></div>
                 <textarea name="obs" placeholder="Descreva observações" rows="5" cols="100%" wrap="hard"></textarea>
                 <br>
                 <br>
-                <button onclick="">Salvar</button>
-                <button onclick="reset()">Cancelar</button>
+                <button id="btn_salvar" onclick="">Salvar</button>
+                <button id="btn_cancelar" onclick="reset()">Cancelar</button>
+                <button id="btn_consultar" onclick="">Consultar</button>
+                <button id="btn_excluir_tudo" onclick="">Excluir dados da tabela</button>
                 <button onclick="printDiv()">Imprimir</button>
                 <button onclick="window.location.replace('htmlpadraocompleto.html')">Sair</button>
             </form>

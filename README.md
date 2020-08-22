@@ -1,7 +1,7 @@
 <<<<<<< HEAD
 ## Formulário para orçamentos de serviços e materiais
 
-### Formulário com implementação de banco de dados no navegador
+### Formulário com implementação de manipulação de dados no navegador
 
 #### Recursos
 

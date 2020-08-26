@@ -16,25 +16,31 @@ input {
   border: none;
   width: 100%;
 }
-#header {
+#tbl_head {
   width: 100%;
 }
-#tbl_orc, #tbl_mtl, #tbl_cli, #ttl_orc {
+#tbl_head td {
+ margin: 0;
+ padding: 0;
+}
+#tbl_cli, #tbl_empr {
   width: 100%;
 }
-#ttl_orc td, #tbl_orc td, #tbl_mtl td {
+#tbl_cli th, #tbl_empr th {
+  width: 20%;
+  text-align: left;
+  border-left: 4px solid grey;
+}
+#tbl_orc, #tbl_mtl, #ttl_orc {
+  width: 100%;
+}
+#ttl_orc td, #tbl_orc td, #tbl_mtl td, #tbl_cli td, #tbl_empr td {
   border-left: 1px solid grey;
   border-bottom: 1px solid grey;
 }
 th {
   text-align: left;
   border-left: 4px solid grey;
-}
-#header td {
-  padding-left: 5%;
-  padding-right: 5%;
-  border: 1px solid grey;
-  margin: 0 auto;
 }
 textarea {
   font-size: 1rem;

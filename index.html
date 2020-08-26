@@ -5,51 +5,68 @@
     <head>
         <title>Orçamentos NServiços</title>
         <meta charset="UTF-8">
-        <link rel="stylesheet" type="text/css" href="http://localhost/html_padrao/main.css"/>
-        <script type="text/javascript" src="http://localhost/html_padrao/database.js"></script>   
-        <script type="text/javascript" src="http://localhost/html_padrao/tbl_script.js"></script>    
+        <link rel="stylesheet" type="text/css" href="main.css"/>
+        <script type="text/javascript" src="database.js"></script>   
+        <script type="text/javascript" src="tbl_script.js"></script>    
     </head>
     <body onload="adicionaLinha('tbl_orc'), adicionaLinha('tbl_mtl'), pegarDataAtual(), reset()">
         <div id="container">
             <h1>Orçamento</h1>
-            <table id="header">
+            <p id="p_data"></p>
+            <form onsubmit="return false">
+            <table id="tbl_head">
+                <tr>
+                    <td><h3>Empresa</h3></td>
+                    <td><h3>Cliente</h3></td>
+                </tr>
                 <tr>
                 <td>
-                <p>
-                    Nome da empresa
-                    <br>
-                    Fone/Whatsapp 00 00000 0000
-                    <br>
-                    cnpj 00.000.000/0000-00
-                </p>
-                </td>
-                <td>
-                <form onsubmit="return false">
-                    <table id="tbl_cli">
+                    <table id="tbl_empr">
                         <tr>
-                        <td>Nome:</td>
+                        <th>Empresa:</th>
                         <td>
-                        <input type="text" id="nome_cliente" name="nome_cliente" placeholder="Nome Do Cliente" autofocus>
+                        <input type="text" id="nome_empresa" name="nome_empresa" placeholder="Nome Da Empresa" autofocus>
                         </td>
                         </tr>
                         <tr>
-                        <td>Fone/Whatsapp:</td>
+                        <th>Fone/Whatsapp:</th>
+                        <td>
+                        <input type="text" id="fone_empresa" name="fone_empresa" onkeyup="mascara(this, '## ##### ####')" maxlength="13" placeholder="00 00000 0000">
+                        </td>
+                        </tr>
+                        <tr>
+                        <th>Id/CNPJ:</th>
+                        <td>
+                        <input type="text" id="id_cnpj_empresa" name="id_cnpj_empresa" placeholder="Id/CNPJ Da Empresa">
+                        </td>
+                        </tr>
+                    </table>   
+                </td>
+                <td>
+                    <table id="tbl_cli">
+                        <tr>
+                        <th>Cliente:</th>
+                        <td>
+                        <input type="text" id="nome_cliente" name="nome_cliente" placeholder="Nome Do Cliente">
+                        </td>
+                        </tr>
+                        <tr>
+                        <th>Fone/Whatsapp:</th>
                         <td>
                         <input type="text" id="fone_cliente" name="fone_cliente" onkeyup="mascara(this, '## ##### ####')" maxlength="13" placeholder="00 00000 0000">
                         </td>
                         </tr>
                         <tr>
-                        <td>End.:</td>
+                        <th>End.:</th>
                         <td>
                         <input type="text" id="endereco_cliente" name="endereco_cliente" placeholder="Rua do Cliente, 0000 - Cidade">
                         </td>
                         </tr>
-                    </table>    
-                
+                    </table>
+                </td>         
+                </tr>   
             </table>
-                <p id="p_data"></p>
                 <h2>Serviço</h2>
-                <p id="test"></p>
             <table id="tbl_orc">
                 <tr>
                   <th>Quant.</th>
@@ -107,4 +124,3 @@
         </footer>       
     </body>
 </html>
-

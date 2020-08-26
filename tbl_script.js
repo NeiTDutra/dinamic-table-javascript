@@ -55,9 +55,10 @@
 
             function pegarDataAtual(){
             
-               data = new Date;
+               let data = new Date;
+               let num = '000001';
                month = data.getMonth() + 1;
-               document.getElementById('p_data').innerHTML = '<input type="text" name="data" size="14" value="Data: '+data.getDate()+' / '+month+' / '+data.getFullYear()+'" readonly="true">';
+               document.getElementById('p_data').innerHTML = '<input type="text" name="num_orc" size="6" value="Orçamento nº: '+num+'" readonly="true"><input type="text" name="data" size="14" value="Data: '+data.getDate()+' / '+month+' / '+data.getFullYear()+'" readonly="true">';
             }   
             
 // função imprime a div

@@ -6,7 +6,7 @@
   background: white;
 }
 h1, h2, h3 {
-  color: grey;
+  color: grey !important;
 }
 input {
   overflow: hidden;
@@ -23,13 +23,12 @@ input {
 #tbl_cli, #tbl_empr {
   width: 100%;
 }
-#tbl_cli th, #tbl_empr th {
-  width: 20%;
-  text-align: left;
-  border-left: 4px solid grey;
+#tbl_orc, #tbl_mtl {
+  margin-bottom: 3%;
+  width: 100%;
 }
-#tbl_orc, #tbl_mtl, #ttl_orc {
-  margin-bottom: 5%%;
+#ttl_orc {
+  margin-bottom: 10%;
   width: 100%;
 }
 #ttl_orc td, #tbl_orc td, #tbl_mtl td {

@@ -33,15 +33,15 @@
                         </td>
                         </tr>
                         <tr>
-                        <th>Fone/Whatsapp:</th>
-                        <td>
-                        <input type="text" id="fone_empresa" name="fone_empresa" onkeyup="mascara(this, '## ##### ####')" maxlength="13" placeholder="00 00000 0000">
-                        </td>
-                        </tr>
-                        <tr>
                         <th>Id/CNPJ:</th>
                         <td>
                         <input type="text" id="id_cnpj_empresa" name="id_cnpj_empresa" placeholder="Id/CNPJ Da Empresa">
+                        </td>
+                        </tr>
+                        <tr>
+                        <th>Fone:</th>
+                        <td>
+                        <input type="text" id="fone_empresa" name="fone_empresa" onkeyup="mascara(this, '## ##### ####')" maxlength="13" placeholder="00 00000 0000/Whatsapp">
                         </td>
                         </tr>
                     </table>   
@@ -53,17 +53,29 @@
                         <td>
                         <input type="text" id="nome_cliente" name="nome_cliente" placeholder="Nome Do Cliente">
                         </td>
-                        </tr>
-                        <tr>
-                        <th>Fone/Whatsapp:</th>
+                        <th>Rua:</th>
                         <td>
-                        <input type="text" id="fone_cliente" name="fone_cliente" onkeyup="mascara(this, '## ##### ####')" maxlength="13" placeholder="00 00000 0000">
+                        <input type="text" id="endereco_rua_cliente" name="endereco_rua_cliente" placeholder="Rua do Cliente">
                         </td>
                         </tr>
                         <tr>
-                        <th>End.:</th>
+                        <th>Email:</th>
                         <td>
-                        <input type="text" id="endereco_cliente" name="endereco_cliente" placeholder="Rua do Cliente, 0000 - Cidade">
+                        <input type="text" id="email_cliente" name="email_cliente" onkeyup="" maxlength="13" placeholder="abcd@abcd.com.br">
+                        </td>
+                        <th>Nº:</th>
+                        <td>
+                        <input type="text" id="endereco_numero_cliente" name="endereco_numero_cliente" placeholder="0000">
+                        </td>
+                        </tr>
+                        <tr>
+                        <th>Fone:</th>
+                        <td>
+                        <input type="text" id="fone_cliente" name="fone_cliente" onkeyup="mascara(this, '## ##### ####')" maxlength="13" placeholder="00 00000 0000/Whatsapp">
+                        </td>
+                        <th>Cidade:</th>
+                        <td>
+                        <input type="text" id="endereco_cidade_cliente" name="endereco_cidade_cliente" placeholder="Cidade">
                         </td>
                         </tr>
                     </table>
@@ -82,6 +94,8 @@
                 </tr>
             </table>
                 <button onclick="adicionaLinha('tbl_orc')" class="btn btn-outline-primary btn-sm">Adicionar Serviço</button>
+                <br>
+                <br>
                 <h3>Material</h3>
             <table id="tbl_mtl">
                 <tr>
@@ -93,6 +107,8 @@
                 </tr>
             </table>
                 <button onclick="adicionaLinha('tbl_mtl')" class="btn btn-outline-primary btn-sm">Adicionar Material</button>
+                <br>
+                <br>
                 <h3>Valores</h3>
             <table id="ttl_orc">
                 <tr>
@@ -125,7 +141,7 @@
         </div>
         <br>
         <footer>
-	    <p>Copyright 2020 - <a href="http://sites.google.com/view/nservicos">NServiços©</a></p>
+	    <p>Copyright 2020 - <a href="http://sites.google.com/view/nservicos">NServiços© </a><a href="mailto:projetocelo@gmail.com">projetocelo@gmail.com</a></p>
         </footer>  
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
                 integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" 

@@ -16,6 +16,10 @@ input {
   border: none;
   width: 100%;
 }
+th {
+  text-align: left;
+  border-left: 4px solid grey;
+}
 #tbl_head {
   width: 100%;
 }
@@ -23,25 +27,35 @@ input {
  margin: 0;
  padding: 0;
 }
-#tbl_cli, #tbl_empr {
+#tbl_empr {
   width: 100%;
 }
-#tbl_cli th, #tbl_empr th {
+#tbl_empr th {
   width: 20%;
-  text-align: left;
-  border-left: 4px solid grey;
-}
-#tbl_orc, #tbl_mtl, #ttl_orc {
-  margin-bottom: 10%;
-  width: 100%;
-}
-#ttl_orc td, #tbl_orc td, #tbl_mtl td, #tbl_cli td, #tbl_empr td {
-  border-left: 1px solid grey;
   border-bottom: 1px solid grey;
 }
-th {
-  text-align: left;
-  border-left: 4px solid grey;
+#tbl_empr td {
+  width: 80%;
+  border-bottom: 1px solid grey;
+}
+#tbl_cli {
+  width: 100%;
+}
+#tbl_cli th {
+  width: 6%;
+  border-bottom: 1px solid grey;
+}
+#tbl_cli td {
+  width: 44%;
+  border-bottom: 1px solid grey;
+}
+#tbl_orc, #tbl_mtl, #ttl_orc {
+  margin-bottom: 2%;
+  width: 100%;
+}
+#ttl_orc td, #tbl_orc td, #tbl_mtl td {
+  border-left: 1px solid grey;
+  border-bottom: 1px solid grey;
 }
 textarea {
   font-size: 1rem;
@@ -68,19 +82,13 @@ textarea {
 .navbar {
   padding-right: 4%;
 }
-.article {
+.article { 
   margin-top: 2%;
   padding: 1%;
 }
 html {
   font-size: 1rem;
 }
-
-@media print {
-  button  {
-    visibility: hidden !important;
-  }
-  h1 {
-    color: grey;
-  }  
+a {
+  color: black;
 }

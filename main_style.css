@@ -15,47 +15,53 @@ input {
   overflow: hidden;
   border: none;
   width: 100%;
-}
-th {
-  text-align: left;
-  border-left: 4px solid grey;
+  padding-left: 10px;
 }
 #tbl_head {
   width: 100%;
 }
-#tbl_head td {
- margin: 0;
- padding: 0;
+#tbl_head th {
+  border-left: 4px solid grey;
 }
-#tbl_empr {
+#tbl_title {
+  width: 60%;
+}
+#tbl_title td, #tbl_title input {
+  text-align: center;
+  vertical-align: middle;
+}
+#tbl_empresa {
   width: 100%;
 }
-#tbl_empr th {
+#tbl_empresa th {
   width: 20%;
   border-bottom: 1px solid grey;
 }
-#tbl_empr td {
+#tbl_empresa td {
   width: 80%;
   border-bottom: 1px solid grey;
 }
-#tbl_cli {
+#tbl_cliente {
   width: 100%;
 }
-#tbl_cli th {
-  width: 6%;
+.th6 {
+  width: 10%;
   border-bottom: 1px solid grey;
 }
-#tbl_cli td {
-  width: 44%;
+.td44 {
+  width: 40%;
   border-bottom: 1px solid grey;
 }
-#tbl_orc, #tbl_mtl, #ttl_orc {
+#tbl_serv, #tbl_mate, #ttl_serv {
   margin-bottom: 2%;
   width: 100%;
 }
-#ttl_orc td, #tbl_orc td, #tbl_mtl td {
+#ttl_serv td, #tbl_serv td, #tbl_mate td {
   border-left: 1px solid grey;
   border-bottom: 1px solid grey;
+}
+#ttl_serv th, #tbl_serv th, #tbl_mate th {
+  border-left: 4px solid grey;
 }
 textarea {
   font-size: 1rem;
@@ -91,4 +97,7 @@ html {
 }
 a {
   color: black;
+}
+th {
+  padding-left: 10px;
 }

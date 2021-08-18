@@ -5,6 +5,13 @@
   padding: 2% 2%;
   background: white;
 }
+body {
+  padding: 0 2%;
+  background-color: white;
+}
+.noprint {
+  visibility: hidden !important;
+}
 h1, h2, h3 {
   color: grey !important;
 }
@@ -16,22 +23,24 @@ input {
 #tbl_head {
   width: 100%;
 }
-#tbl_head td {
- margin: 0;
- padding: 0;
+#tbl_title {
+  width: 60%;
 }
-#tbl_cli, #tbl_empr {
+#tbl_title td {
+  margin: 0 auto;
+}
+#tbl_cliente, #tbl_empresa {
   width: 100%;
 }
-#tbl_orc, #tbl_mtl {
+#tbl_serv, #tbl_mate {
   margin-bottom: 3%;
   width: 100%;
 }
-#ttl_orc {
+#ttl_serv {
   margin-bottom: 10%;
   width: 100%;
 }
-#ttl_orc td, #tbl_orc td, #tbl_mtl td {
+#ttl_serv td, #tbl_serv td, #tbl_mate td {
   border-left: 1px solid grey;
   border-bottom: 1px solid grey;
 }

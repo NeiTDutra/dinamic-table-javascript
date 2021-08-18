@@ -4,6 +4,19 @@
 // função moeda em https://www.alura.com.br/artigos/formatando-numeros-no-javascript
 // função moeda em http://wbruno.com.br/expressao-regular/formatar-em-moeda-reais-expressao-regular-em-javascript/
 
+// Função para altura altomatica do tag textarea
+
+const tx = document.getElementsByTagName('textarea');
+for (let i = 0; i < tx.length; i++) {
+  tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+  tx[i].addEventListener("input", OnInput, false);
+}
+
+function OnInput() {
+  this.style.height = 'auto';
+  this.style.height = (this.scrollHeight) + 'px';
+}
+
 // Funcao adiciona uma nova linha na tabela
 
 function adicionaLinha(idTabela) {
@@ -27,7 +40,7 @@ function adicionaLinha(idTabela) {
     celula2.innerHTML = '<input type="text" id="'+desc+'" name="descricao" size="40" placeholder="Descrição do serviço">'; 
 // caractere de escape passando parametro para função como variavel
     celula3.innerHTML = '<input type="text" id="'+vu+'" name="valorUnitario" size="8" placeholder="0.000,00" onkeyup="k(this), calculaMult(\''+qtd+'\',\''+vu+'\',\''+vt+'\',\''+idTabela+'\')">'; 
-    celula4.innerHTML = '<input type="text" id="'+vt+'" class="'+sttl+'" name="valorTotal" size="8" placeholder="0.000,00"readonly="true" onfocus="k(this)">'; 
+    celula4.innerHTML = '<input type="text" id="'+vt+'" class="'+sttl+'" name="valorTotal" size="8" placeholder="0.000,00" readonly="true" onfocus="k(this)">'; 
     celula5.innerHTML =  '<button onclick="removeLinha(this,'+idTabela+')" class="btn btn-outline-danger btn-sm">Excluir</button>';
 }
             
@@ -57,16 +70,35 @@ function removeLinha(linha,t) {
 function pegarDataAtual(){
 
    let data = new Date;
-   let num = '000001';
+   let num = data.valueOf();
+   console.log(num);
    month = data.getMonth() + 1;
-   document.getElementById('p_data').innerHTML = '<input type="text" name="num_orc" size="6" value="Orçamento nº: '+num+'" readonly="true"><input type="text" name="data" size="14" value="Data: '+data.getDate()+' / '+month+' / '+data.getFullYear()+'" readonly="true">';
+   document.getElementById('n_orcamento').innerHTML = '<input type="text" name="num_orc" size="15" value="'+num+'" readonly="true">';
+   document.getElementById('p_data').innerHTML = '<input type="text" name="data" size="14" value="'+data.getDate()+' / '+month+' / '+data.getFullYear()+'" readonly="true">';
 }   
             
 // função imprime a div
 
-function printDiv() {
+function printOrc() {
 
-   window.print();
+    var cssEstilos = '';
+    var imp = window.open('', 'width='+window.innerWidth+', height='+window.innerHeight);
+
+    var cSs = document.querySelectorAll("link[rel='stylesheet']");
+    for(x=0;x<cSs.length;x++){
+       cssEstilos += '<link rel="stylesheet" href="'+cSs[x].href+'">';
+    }
+
+    imp.document.write('<html><head><title>' + document.title  + '</title>');
+    imp.document.write(cssEstilos+'</head><body>');
+    imp.document.write(document.getElementById('container').innerHTML);
+    imp.document.write('</body></html>');
+    imp.print();
+    setTimeout(function(){
+       imp.close();
+    },2000); 
+    //window.print();
+    //window.close();
 }  
             
 // função que multiplica valor unitario por quantidade de itens, soma valor total das tabelas e valor total do orçamento 
@@ -84,9 +116,9 @@ function calculaMult(q,vu,vt,idt) {
   
   switch(idt){
   
-     case 'tbl_orc':
+     case 'tbl_serv':
      
-        var els = document.getElementsByClassName('tbl_orc_sttl');
+        var els = document.getElementsByClassName('tbl_serv_sttl');
         var elsArray = Array.prototype.slice.call(els, 0);
         var soma = 0;
         elsArray.forEach(function(el) {
@@ -94,33 +126,33 @@ function calculaMult(q,vu,vt,idt) {
         });
         soma = soma.toLocaleString('pt-br', {style:'currency', currency:'BRL'});
   
-        document.getElementById('ttl_srv').value = soma;
+        document.getElementById('ttl_serv').value = soma;
      break;
      
-     case 'tbl_mtl':
-        var els = document.getElementsByClassName('tbl_mtl_sttl');
+     case 'tbl_mate':
+        var els = document.getElementsByClassName('tbl_mate_sttl');
         var elsArray = Array.prototype.slice.call(els, 0);
         var soma = 0;
         elsArray.forEach(function(el) {
             soma += parseFloat(moedaReverse(el.value));
         });
         soma = soma.toLocaleString('pt-br', {style:'currency', currency:'BRL'});
-        document.getElementById('ttl_mtl').value = soma;
+        document.getElementById('ttl_mate').value = soma;
      break;
   }
   
-  var vtc0 = document.getElementById('ttl_srv').value;
+  var vtc0 = document.getElementById('ttl_serv').value;
   vtc0 = moedaReverse(vtc0);
   vtc0 = parseFloat(vtc0, 10);
   
-  var vtc1 = document.getElementById('ttl_mtl').value;
+  var vtc1 = document.getElementById('ttl_mate').value;
   vtc1 = moedaReverse(vtc1);
   vtc1 = parseFloat(vtc1, 10);
   
   var sm = vtc0 + vtc1;
   sm = sm.toLocaleString('pt-br', {style:'currency', currency:'BRL'});
   
-  document.getElementById('tl_orc').value = sm;
+  document.getElementById('tl_geral').value = sm;
   
 }
             
